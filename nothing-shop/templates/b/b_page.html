@@ -1,0 +1,32 @@
+{% extends 'a/layout.html' %}
+{% load static %}
+{% block content %}
+<head><title>Nothing-catalog</title></head>
+<h1>Catalog</h1>
+<div style="margin-bottom:30px;"></div>
+<style>
+    .container form {
+    }
+    .but_add button {
+    margin-left: 15%;
+
+    }
+</style>
+<body>
+
+    <p>At the moment we are still not open</p>
+    <p>Leave your contact details if you want to receive news about our site</p>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <p>{{ form.email }}</p>
+            <p>{{ form.name }}</p>
+            <div class="but_add">
+                <button class="btn btn-success" type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+{% endblock %}
